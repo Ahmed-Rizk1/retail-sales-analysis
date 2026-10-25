@@ -41,8 +41,38 @@ st.markdown(
         color: #e0e0e0;
     }
     [data-testid="stSidebar"] {
-        background: rgba(255,255,255,0.04);
+        background: #14162b;
         border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    /* ---- Sidebar Labels & Header ---- */
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h2 span,
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h3 {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 1.4rem !important;
+        letter-spacing: 0.5px;
+    }
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] label p,
+    [data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+    [data-testid="stSidebar"] [data-testid="stWidgetLabel"] span {
+        color: #90cdf4 !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+    }
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div {
+        background-color: #1a1a2e !important;
+        border: 1px solid rgba(144, 205, 244, 0.3) !important;
+        border-radius: 8px !important;
+    }
+    [data-testid="stSidebar"] [data-baseweb="tag"] {
+        background-color: #253358 !important;
+        border: 1px solid #4299e1 !important;
+    }
+    [data-testid="stSidebar"] [data-baseweb="tag"] span {
+        color: #ffffff !important;
     }
     /* ---- Metric cards ---- */
     [data-testid="metric-container"] {
