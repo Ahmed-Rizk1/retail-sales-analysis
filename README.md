@@ -206,9 +206,8 @@ The `.pbix` file in `/PowerBI` contains a fully interactive dashboard connected 
 
 **Ahmed Rizk Gawish**
 
-[![LinkedIn]([https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://linkedin.com/in/YOUR-PROFILE](https://www.linkedin.com/in/ahmedrizkgawish/))
-[![GitHub]([https://img.shields.io/badge/GitHub-Profile-181717?logo=github)](https://github.com/YOUR-USERNAME](https://github.com/Ahmed-Rizk1))
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/ahmedrizkgawish/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github)]([https://github.com/YOUR-USERNAME](https://github.com/Ahmed-Rizk1))
 ---
 
 ## 📄 License
