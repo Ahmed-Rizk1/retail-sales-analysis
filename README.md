@@ -38,9 +38,7 @@ This project walks through a full data analysis lifecycle on the **AdventureWork
 
 > **Deployed on Streamlit Cloud — no installation required.**
 
-[![Open in Streamlit](https://retail-sales-analysis-mvp.streamlit.app/)
-
-*Replace the link above with your Streamlit Cloud URL after deployment.*
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://retail-sales-analysis-mvp.streamlit.app/)
 
 ---
 
@@ -176,7 +174,7 @@ The `.pbix` file in `/PowerBI` contains a fully interactive dashboard connected 
 - **Sales Trend Lines** — YoY growth with dynamic time filters
 - **Customer Demographics Panel** — gender, income bracket, commute distance cross-filters
 
-> **Don't have Power BI Desktop?** Use the [live Streamlit dashboard](https://YOUR-APP-URL.streamlit.app) for identical insights in your browser.
+> **Don't have Power BI Desktop?** Use the [live Streamlit dashboard](https://retail-sales-analysis-mvp.streamlit.app/) for identical insights in your browser.
 
 ---
 
@@ -207,7 +205,8 @@ The `.pbix` file in `/PowerBI` contains a fully interactive dashboard connected 
 **Ahmed Rizk Gawish**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/ahmedrizkgawish/)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github)](https://github.com/Ahmed-Rizk1))
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github)](https://github.com/Ahmed-Rizk1)
+
 ---
 
 ## 📄 License
