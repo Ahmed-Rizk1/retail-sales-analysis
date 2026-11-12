@@ -1,5 +1,7 @@
 # Secrets
 .env
+ANALYSIS_PROGRESS.md
+ANALYSIS_TUNING_PLAN.md
 
 # Python
 __pycache__/
