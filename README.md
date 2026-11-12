@@ -142,24 +142,35 @@ jupyter notebook Scripts/End-to-End.ipynb
 
 ## 📈 Key Findings
 
-### Revenue Performance
-- **Total revenue (2010–2013):** $29.4 M across 60 K+ transactions
-- **Bikes dominate** — contributing ~96% of total revenue, with Road Bikes and Mountain Bikes as the top two subcategories
-- **Strongest quarter:** Q4 across all years, driven by holiday purchasing
+> Figures are drawn from the full 2010–2013 dataset (60,398 transactions, $29.4 M revenue).
 
-### Customer Insights
-- **Age 25–60** accounts for ~91% of total revenue — the primary target segment
-- **Gender split is nearly equal** (~$14.8M female vs ~$14.5M male), indicating broad appeal
-- Customers with a **2–5 mile commute distance** have the highest average transaction value
+### 1. Revenue Performance
+- **\$29.4 M total revenue** across 60,398 transactions over 4 years; average order value \$486.
+- **Q4 is consistently the strongest quarter** in every year — peak in December, driven by seasonal purchasing cycles.
+- **2013 was the highest revenue year**, with YoY growth accelerating from ~18% (2011→2012) to ~38% (2012→2013).
 
-### Geographic Trends
-- **United States** is the top market, followed by Australia and Canada
-- Pacific and North America regions show the strongest YoY growth trajectory
+### 2. Product Mix
+- **Bikes dominate at 96% of revenue** (\$28.3 M); Accessories and Clothing combined contribute just 4%.
+- Within Bikes: **Road Bikes are the top subcategory** (\$14.5 M), followed by Mountain Bikes (\$9.9 M), then Touring Bikes.
+- **Mountain Bikes grew 37,249%** in revenue from 2010 to 2013 — the fastest-growing subcategory by relative growth.
+- **Accessories carry the highest profit margins** despite low absolute revenue — a key insight for pricing strategy.
+- Products with no colour attribute (labelled "Unknown") cluster exclusively in the Accessories category, consistent with the AdventureWorks schema.
 
-### Product Analytics
-- **Mountain Bikes** grew **37,249%** in revenue from 2010 to 2013 — the fastest-growing subcategory
-- **Accessories** have the highest profit margins despite lower absolute revenue
-- Products with no colour data ("Unknown") cluster in the Accessories category
+### 3. Customer Demographics
+- **Age 25–54** generates ~87% of total revenue — the primary target segment for marketing spend.
+- **Gender split is nearly equal**: Female \$14.8 M (50.4%) vs Male \$14.5 M (49.6%) — indicating broad product appeal with no strong gender skew.
+- **Customers commuting 2–5 miles have the highest average transaction value** — likely correlating with recreational cyclists vs. commuters.
+- Married customers account for a slightly higher share of revenue than single customers across all product categories.
+
+### 4. Geographic Performance
+- **United States is the largest market** (~\$9.4 M), followed by **Australia** (~\$9.1 M) and **Canada** (~\$1.9 M).
+- **Australia punches above its weight**: similar revenue to the US despite being a smaller population — indicates high per-customer spend.
+- Pacific and North America regions show the strongest YoY growth trajectory, suggesting expanding market penetration.
+
+### 5. Profitability
+- Overall portfolio profit margin: **~41%** (total profit / total revenue).
+- Accessories deliver the highest per-unit margins; Bikes deliver the highest absolute profit dollars.
+- No negative-margin products detected in the cleaned dataset — StandardCost is always below SalesAmount.
 
 ---
 

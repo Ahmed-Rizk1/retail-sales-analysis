@@ -176,6 +176,10 @@ mask = (
 )
 df = df_raw[mask].copy()
 
+if df.empty:
+    st.warning("⚠️ No data matches the selected filters. Adjust the sidebar to continue.")
+    st.stop()
+
 # ──────────────────────────────────────────────
 # Hero
 # ──────────────────────────────────────────────
@@ -200,7 +204,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ──────────────────────────────────────────────
 total_revenue   = df["SalesAmount"].sum()
 total_profit    = df["Profit"].sum()
-avg_margin      = df["ProfitMargin"].mean()
+avg_margin = (df["Profit"].sum() / df["SalesAmount"].sum() * 100) if df["SalesAmount"].sum() > 0 else 0.0
 total_orders    = df["SalesOrderNumber"].nunique()
 total_customers = (df["CustomerFirstName"] + " " + df["CustomerLastName"]).nunique()
 avg_order_value = df.groupby("SalesOrderNumber")["SalesAmount"].sum().mean()
@@ -244,7 +248,7 @@ with col_l:
         yaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
         xaxis=dict(gridcolor="rgba(255,255,255,0.06)"),
     )
-    st.plotly_chart(fig_trend, width='stretch')
+    st.plotly_chart(fig_trend, use_container_width=True)
 
 with col_r:
     st.markdown("<div class='section-header'>Revenue by Category</div>", unsafe_allow_html=True)
@@ -261,7 +265,7 @@ with col_r:
         margin=dict(l=0, r=0, t=10, b=0), height=300,
         showlegend=False,
     )
-    st.plotly_chart(fig_pie, width='stretch')
+    st.plotly_chart(fig_pie, use_container_width=True)
 
 # ──────────────────────────────────────────────
 # Row 2: Top subcategories  +  Sales by country (map)
@@ -291,7 +295,7 @@ with col_a:
         coloraxis_showscale=False,
         xaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
     )
-    st.plotly_chart(fig_bar, width='stretch')
+    st.plotly_chart(fig_bar, use_container_width=True)
 
 with col_b:
     st.markdown("<div class='section-header'>Revenue by Country</div>", unsafe_allow_html=True)
@@ -312,7 +316,7 @@ with col_b:
                  coastlinecolor="rgba(255,255,255,0.15)", landcolor="rgba(40,40,60,0.8)"),
         coloraxis_colorbar=dict(tickprefix="$"),
     )
-    st.plotly_chart(fig_map, width='stretch')
+    st.plotly_chart(fig_map, use_container_width=True)
 
 # ──────────────────────────────────────────────
 # Row 3: Customer demographics
@@ -336,7 +340,7 @@ with d1:
         showlegend=False,
         yaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
     )
-    st.plotly_chart(fig_g, width='stretch')
+    st.plotly_chart(fig_g, use_container_width=True)
 
 with d2:
     age_rev = df.groupby("AgeGroup", observed=True)["SalesAmount"].sum().reset_index()
@@ -354,7 +358,7 @@ with d2:
         coloraxis_showscale=False,
         yaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
     )
-    st.plotly_chart(fig_age, width='stretch')
+    st.plotly_chart(fig_age, use_container_width=True)
 
 with d3:
     commute_rev = (
@@ -376,7 +380,7 @@ with d3:
         coloraxis_showscale=False,
         yaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
     )
-    st.plotly_chart(fig_cd, width='stretch')
+    st.plotly_chart(fig_cd, use_container_width=True)
 
 # ──────────────────────────────────────────────
 # Row 4: YoY  +  Income vs Sales scatter
@@ -402,7 +406,7 @@ with col_p:
                    gridcolor="rgba(255,255,255,0.06)"),
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
     )
-    st.plotly_chart(fig_yoy, width='stretch')
+    st.plotly_chart(fig_yoy, use_container_width=True)
 
 with col_q:
     st.markdown("<div class='section-header'>Yearly Income vs. Sales Amount</div>", unsafe_allow_html=True)
@@ -423,7 +427,7 @@ with col_q:
         xaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
     )
-    st.plotly_chart(fig_sc, width='stretch')
+    st.plotly_chart(fig_sc, use_container_width=True)
 
 # ──────────────────────────────────────────────
 # Row 5: Profit margin heatmap + Marital status
@@ -455,7 +459,7 @@ with col_x:
         margin=dict(l=0, r=0, t=10, b=0), height=300,
         xaxis_title="", yaxis_title="",
     )
-    st.plotly_chart(fig_heat, width='stretch')
+    st.plotly_chart(fig_heat, use_container_width=True)
 
 with col_y:
     st.markdown("<div class='section-header'>Revenue by Marital Status & Category</div>", unsafe_allow_html=True)
@@ -475,7 +479,7 @@ with col_y:
         yaxis=dict(tickprefix="$", gridcolor="rgba(255,255,255,0.06)"),
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
     )
-    st.plotly_chart(fig_ms, width='stretch')
+    st.plotly_chart(fig_ms, use_container_width=True)
 
 # ──────────────────────────────────────────────
 # Raw data explorer
@@ -489,6 +493,6 @@ with st.expander("🔍 Explore Raw Data"):
     ]
     st.dataframe(
         df[cols_show].sort_values("SalesAmount", ascending=False).head(500),
-        width='stretch',
+        use_container_width=True,
         hide_index=True,
     )
